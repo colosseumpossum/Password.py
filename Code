@@ -1,0 +1,29 @@
+logged_in = False
+
+user = input("What should we call you: ")
+
+
+password = input("Password: ")
+confirm = input("Confirm password: ")
+while confirm != password:
+  print("Passwords do not match. Try again.")
+  confirm = input("Confirm password: ")
+
+
+print(f"Account created, {user}")
+
+Tries = 3
+
+while Tries > 0:
+  print(f"Please log in.")
+  guess = input("Password: ")
+  Tries -= 1
+  if guess != password:
+    print(f"Error: Password doesn't match. {Tries} {'try' if Tries == 1 else 'tries'} left.")
+  else:
+    print(f"Welcome, {user}")
+    logged_in = True
+    break
+
+if logged_in == False:
+  print("Failure to log in.")
